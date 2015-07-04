@@ -1,0 +1,2 @@
+Signleton Pattern :
+La pattern duoc su dung de tao su rang buoc, chi cho phep voi class nao do chi co duy nhat 1 doi tuong duoc khoi tao ma thoi. Va de lam duoc dieu do ta pahi su dung 1 so ky thuat nham khoa va khong phep doi tuong duoc phep khoi tao
