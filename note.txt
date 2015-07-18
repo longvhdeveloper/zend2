@@ -1,0 +1,73 @@
+getRequest():
+Lay du lieu nguoi su dung gui len
+
+    +isPost() ==> isset()
+    +isGet()
+    +getPost() => getPost('email')
+    +getQuery()
+
+    $this->getRequest()->getPost('username');
+
+    Plugin:
+        redirect()
+        layout()
+        flashMessenger()
+
+getResponse():
+Lay du lieu tra ve cho nguoi dung
+getServiceLocator():
+
+getEventManager():
+quan ly cac event ma chung ta dang ky trong ung dung
+
+template-path-stack: set view for layout
+
+Mot so view helper pho bien ma chung ta hay su dung
+
++basePath() : Goi duong dan o view
++doctype():thiet lap doctype o view
++headTitle():Ten cua trinh duyet trong cap the <title></title>
++headLink() : Thiet lap css tu ben ngoai. Nhung de dung duoc can phai di kem phuon g thuc thiet lap sau:
+    - appendStyleSheet(URLCSS) : Nap file css
+    - prependStyleSheet(URLCSS) : Nap nhieu file css
+    - appendStyle(): Viet CSS
+
++ headMeta(): Thiet lap cac the meta. Voi phuong thuc appendName()
++ headScript(): Thiet lap js. De thuc hien ta can su ho tro cua cac phuong thuc sau:
+    - appendFile(): Nap file js
+    - prependFile() : Nap nhieu file js
+    - appendScript() : Viet truc tiep
+
+$this->partial('ten_view', array(???));
+
+Neu khong thiet lap layout cho module thi no se lay master layout cua module lien ke no
+
+Router:
+http://www.qhonline.edu.vn/users/listall?page=2
+
+Phan tich :
+    + http: schema
+    + qhonline.edu.vn: hostname
+    + uses/listall : path
+    + ?page=2, query
+
+Cac dang route chu dao thuong dung:
++ Literal : duong dan cu the it thay doi
++ Segment : Duong dan thay doi nhung theo chuan muc quy uoc modules/controller/action (tung phan tu la tung segement)
++ Regex : Quy dinh dua vao regular expression
+
+Cau truc can ban cua mot route:
+    'ten route' => array(
+        'type' => 'loai',
+        'options' => array(
+            'route' => 'URL mong muon',
+            'defaults' => array(
+                '__NAMESPACE__' => 'namespace',
+                'controller' => 'Ten controller',
+                'action' => 'action'
+            ),
+        )
+    )
+
+
+application.config.php ==> module .config.php (tuy vao module, va su sap dat trong application.config.php no se uu tien ghi de) ==> file autoload (ghi de len tat ca doi tuong cau hinh o trong module.config.php)
